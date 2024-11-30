@@ -1,5 +1,5 @@
 # Aftermath Bootstrap
-This is a _new cloud_, based on Github Pages and servers.
+This is a _new cloud_, based on Github Pages and  Google and Github servers.
 
 ## Projects on this cloud 
 Aftermath Apps - Python Russian Apps
