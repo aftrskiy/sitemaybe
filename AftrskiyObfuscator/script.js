@@ -25,23 +25,23 @@ function copyToClipboard() {
     const text = output.textContent;
 
     if (!text) {
-        alert("Сначала сгенерируйте обфусцированный код!");
+        alert("Obfuscate the code bruh");
         return;
     }
 
     navigator.clipboard.writeText(text)
         .then(() => {
             const btn = document.querySelector(".copy-btn");
-            btn.textContent = "СКОПИРОВАНО!";
+            btn.textContent = "Copied";
             btn.classList.add("copied");
 
             setTimeout(() => {
-                btn.textContent = "КОПИРОВАТЬ";
+                btn.textContent = "Copy";
                 btn.classList.remove("copied");
             }, 2000);
         })
         .catch(err => {
-            console.error("Ошибка копирования: ", err);
+            console.error("Error: ", err);
             // Fallback для старых браузеров
             const textarea = document.createElement("textarea");
             textarea.value = text;
@@ -63,7 +63,7 @@ function copyToClipboard() {
             try {
                 document.execCommand("copy");
                  const btn = document.querySelector(".copy-btn");
-                 btn.textContent = "Скопировано (fallback)";
+                 btn.textContent = "Copied";
                  btn.classList.add("copied"); // Add copied class for feedback
 
                  setTimeout(() => {
@@ -74,9 +74,9 @@ function copyToClipboard() {
             } catch (e) {
                 console.error("Fallback copying failed: ", e);
                  const btn = document.querySelector(".copy-btn");
-                 btn.textContent = "Не удалось скопировать";
+                 btn.textContent = "Error";
                  setTimeout(() => {
-                      btn.textContent = "КОПИРОВАТЬ";
+                      btn.textContent = "Copy";
                  }, 2000);
             } finally {
                  document.body.removeChild(textarea);
@@ -99,7 +99,7 @@ const saveButton = document.getElementById('saveButton');
         saveButton.addEventListener('click', () => {
             const outputText = document.getElementById("output").textContent.trim();
             if (!outputText) {
-                alert("Нет кода для сохранения. Сначала проведите обфускацию.");
+                alert("Bruh, wheres the obfuscated code? lol");
                 return;
             }
             saveFileDialog.style.display = 'flex'; // Show dialog
