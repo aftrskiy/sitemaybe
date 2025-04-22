@@ -20,4 +20,66 @@ function obfuscate(method, inputText) {
     return output;
 }
 
+function copyToClipboard() {
+    const output = document.getElementById("output");
+    const text = output.textContent;
 
+    if (!text) {
+        alert("Сначала сгенерируйте обфусцированный код!");
+        return;
+    }
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            const btn = document.querySelector(".copy-btn");
+            btn.textContent = "СКОПИРОВАНО!";
+            btn.classList.add("copied");
+
+            setTimeout(() => {
+                btn.textContent = "КОПИРОВАТЬ";
+                btn.classList.remove("copied");
+            }, 2000);
+        })
+        .catch(err => {
+            console.error("Ошибка копирования: ", err);
+            // Fallback для старых браузеров
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            // Make the textarea invisible and remove it from the flow
+            textarea.style.position = "fixed";
+            textarea.style.top = "0";
+            textarea.style.left = "0";
+            textarea.style.width = "1px";
+            textarea.style.height = "1px";
+            textarea.style.padding = "0";
+            textarea.style.border = "none";
+            textarea.style.outline = "none";
+            textarea.style.boxShadow = "none";
+            textarea.style.background = "transparent";
+
+
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand("copy");
+                 const btn = document.querySelector(".copy-btn");
+                 btn.textContent = "Скопировано (fallback)";
+                 btn.classList.add("copied"); // Add copied class for feedback
+
+                 setTimeout(() => {
+                     btn.textContent = "КОПИРОВАТЬ";
+                     btn.classList.remove("copied");
+                 }, 2000);
+
+            } catch (e) {
+                console.error("Fallback copying failed: ", e);
+                 const btn = document.querySelector(".copy-btn");
+                 btn.textContent = "Не удалось скопировать";
+                 setTimeout(() => {
+                      btn.textContent = "КОПИРОВАТЬ";
+                 }, 2000);
+            } finally {
+                 document.body.removeChild(textarea);
+            }
+        });
+}
