@@ -121,21 +121,5 @@
             <button class="button" onclick="window.open('https://aftrhub.xyz/script.lua', '_blank')">Get Script</button>
         </div>
     </div>
-
-    <script>
-        // Reduced the intensity of the mousemove effect
-        const glassContainer = document.querySelector('.glass-container');
-
-
-        glassContainer.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.clientX) / 30; /* Reduced divisor */
-            const y = (window.innerHeight / 2 - e.clientY) / 30; /* Reduced divisor */
-            glassContainer.style.transform = `perspective(200px) rotateX(${y}deg) rotateY(${x}deg)`;
-        });
-
-        glassContainer.addEventListener('mouseout', () => {
-            glassContainer.style.transform = `perspective(200px) rotateX(0deg) rotateY(0deg)`;
-        });
-    </script>
 </body>
 </html>
