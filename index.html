@@ -118,7 +118,7 @@
         <h1>Aftr Hub</h1>
         <p class="slogan">A script for Brookhaven RP that makes you laugh.</p>
         <div class="button-container">
-            <button class="button">Get Script</button>
+            <button class="button" onclick="navigator.clipboard.writeText(/'loadstring(game:HttpGet(/'https://aftrhub.xyz/execute.lua/'))()/')">Get Script</button>
         </div>
     </div>
 
@@ -137,11 +137,6 @@
         glassContainer.addEventListener('mouseout', () => {
             glassContainer.style.transform = `perspective(200px) rotateX(0deg) rotateY(0deg)`;
         });
-
-        button.addEventListener('click', function(event) {
-               navigator.clipboard.writeText('loadstring(game:HttpGet("https://aftrhub.xyz/execute.lua"))()');
-        });
-
     </script>
 </body>
 </html>
