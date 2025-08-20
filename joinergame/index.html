@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Joining Roblox</title>
+	<script>
+		window.onload = function()
+		{
+			const params = new URLSearchParams(window.location.search);
+			const placeId = params.get('placeId');
+
+			if (placeId)
+			{
+				window.location.href = `roblox://placeID=${placeId}`;
+			}
+			else
+			{
+				document.body.textContent = "Error: Missing Place ID. Type this: aftrhub.xyz/joinergame?placeId=YOUR_GAME_PLACE_ID";
+			}
+		};
+	</script>
+</head>
+<body></body>
+</html>
